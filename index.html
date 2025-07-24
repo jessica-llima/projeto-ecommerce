@@ -23,7 +23,7 @@
             </ul>
         </nav>
         <button>
-            <img src="./assets/images/icone_carrinho.svg" alt="carrinho">
+            <img src="./assets/images/icone_carrinho.svg" alt="carrinho de compras">
         </button>
     </header>
     <main>
@@ -137,9 +137,72 @@
                 </ul>
             </div>
         </nav>
-       <div><p>&copy; 2025 Casa da Deusa. Todos os direitos reservados.</p></div>
-        
+        <div>
+            <p>&copy; 2025 Casa da Deusa. Todos os direitos reservados.</p>
+        </div>
     </footer>
+    <!-- [1] -->
+    <div id="modal-1" class="modal" aria-hidden="true">
+
+        <!-- [2] -->
+        <div tabindex="-1" data-micromodal-close>
+
+            <!-- [3] -->
+            <div role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+
+
+                <header>
+                    <h2 id="modal-1-title">
+                        carrinho de compras
+                    </h2>
+
+                    <!-- [4] -->
+                    <button aria-label="Close modal" data-micromodal-close></button>
+                </header>
+
+                <div id="modal-1-content">
+                    <table> 
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Quantidade</th>
+                                <th>Preço</th>
+                                <th>Total</th>
+                                <th></th>
+
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <!-- Exemplo de linha de produto -->
+                            <tr>
+                                <td> <img src="./assets/images/creme-abacate.jpeg">Creme de Abacate</td>
+                                <td>1</td>
+                                <td> <input type="number" value="1" min="1"></td>
+                                <td>R$ 49,99</td>
+                                <td><button id="deletar">deletar</button></td>
+                                
+                            </tr>
+                            <tr>
+                                <td> <img src="./assets/images/creme-calendula.jpeg">Creme de Calêndula</td>
+                                <td>1</td>
+                                <td> <input type="number" value="1" min="1"></td>
+                                <td>R$ 39,29</td>
+                                <td><button id="deletar">deletar</button></td>
+                        </tbody>
+                    </table>
+                    <div>
+                        <span id="Total">Total:R$0,00 </span>
+                        <button id="finalizar-compra">Finalizar Compra</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>button>Remover</button></td>
+
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 </body>
 
 </html>
