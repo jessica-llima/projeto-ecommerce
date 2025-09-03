@@ -5,106 +5,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casa da Deusa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/cabecalho.css">
+    <link rel="stylesheet" href="css/produto.css">
+    <link rel="stylesheet" href="css/front-page.css">
+    <link rel="stylesheet" href="css/intrologo.css">
 </head>
 
 <body>
-    <header>
-        <a href="/index.html" target="_blank">
-            <img src="./assets/images/logo.jpeg" alt="casa da deusa">
-        </a>
+    <div class="front-page">
+        <img src="/assets/images/logo.jpeg" alt="casa da deusa" class="logo" id="logo">
+    </div>
+    <script>
+        setTimeout(() => {
+            document.getElementById('logo').style.animation = "fadeOut 1s forwards";
+            setTimeout(() => {
+                document.querySelector('.front-page').style.display = 'none';
+            }, 5000); // Esconde a imagem após 5 segundos
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes fadeOut {
+                    from { opacity: 1; transform: scale(1); }
+                    to { opacity: 0; transform: scale(0.9); }
+                }
+            `;
+            document.head.appendChild(style);
+        }, 1000); // Inicia a animação após 1 segundo
+    </script>
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="/index.html">
+                <img src="./assets/images/logo.jpeg" alt="Casa da Deusa">
+            </a>
+        </div>
         <nav>
             <ul>
-
-                <li><a href="#home">home</a></li>
-                <li><a href="#produtos">produtos</a></li>
-                <li><a href="#perguntas frequentes">perguntas frequentes</a></li>
-                <li><a href="#contato">contato</a></li>
-
+                <li><a href="#home">Home</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#faq">Perguntas Frequentes</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
-        <button>
-            <img src="./assets/images/icone_carrinho.svg" alt="carrinho de compras">
-        </button>
+        <div class="button-carrinho">
+            <button>
+                <img src="./assets/images/icone_carrinho.svg" alt="Carrinho de compras">
+            </button>
+        </div>
     </header>
+
+    <!-- Seção Intro -->
+  <div class="intrologo">
+    <img src="/assets/images/imagem detalhada com mais flores, plantas e nozes com fundo verde para site.png"
+        alt="Imagem com flores, plantas e nozes" class="intrologo-img">
+    
+    <div class="intrologo-texto">
+        <h2>Casa da Deusa</h2>
+   
+    </div>
+</div>
+
     <main>
         <section>
             <h2>produtos</h2>
 
             <ul>
                 <li>
-                    <figure>
-                        <img src="./assets/images/creme-abacate.jpeg" alt="creme-abacate">
-                        <figcaption> creme de creme abacate
-                        </figcaption>
+                    <figure class="produto figure">
+                        <img src="./assets/images/creme-calendula.jpeg" alt="creme-calendula">
+                        <figcaption>Creme de amendoas com camomila</figcaption>
+                        <span>250 ml</span>
+                        <span>Creme natural de amendoas com camomila </span>
+                        <span>R$ 39,29</span>
+                        <button>comprar</button>
                     </figure>
-                    <div>
-                        <span> 250 ml</span>
-                        <span> creme natural com oleo de abacate e amendoas</span>
-                        <span>R$ 49,99</span>
-                        <button> comprar</button>
-                    </div>
                 </li>
+
                 <li>
-                    <figure>
+                    <figure class="produto figure">
                         <img src="./assets/images/creme-calendula.jpeg" alt="creme-calendula">
                         <figcaption> creme de amendoas com camomila</figcaption>
-                    </figure>
-                    <div>
+
                         <span> 250 ml</span>
                         <span> creme natural de amendoas com camomila </span>
                         <span>R$ 39,29</span>
                         <button> comprar</button>
-                    </div>
+                    </figure>
                 </li>
                 <li>
-                    <figure>
+                    <figure class="produto figure">
                         <img src="./assets/images/essescia-rossas.jpeg" alt="essescia-rossas">
-                        <figcaption> essencia de rosas</figcaption>
-                    </figure>
-                    <div>
+                        <figcaption>essencia de rosas com oliva</figcaption>
+
                         <span>50 ml</span>
-                        <span> essencia natural de rosas</span>
+                        <span>essencia natural de rosas com cardmomo e oliva</span>
                         <span>R$ 129,99</span>
                         <button>comprar</button>
-                    </div>
+                    </figure>
                 </li>
                 <li>
-                    <figure>
+                    <figure class="produto figure">
                         <img src="./assets/images/Essência Natural e Elegância.png" alt="essencia-elegancia">
-                        <figcaption> essencia de alecrim com cardamomo</figcaption>
-                    </figure>
-                    <div>
+                        <figcaption>essencia de alecrim com cardamomo</figcaption>
+
                         <span>50 ml</span>
-                        <span> essencia natural de alecrim com cardamomo </span>
+                        <span>essencia natural de alecrim com cardamomo</span>
                         <span>R$ 129,99</span>
                         <button>comprar</button>
-                    </div>
+                    </figure>
                 </li>
                 <li>
-                    <figure>
+                    <figure class="produto figure">
                         <img src="./assets/images/sabonete trio.jpeg" alt="sabonete trio">
                         <figcaption> tres sabonetes naturais</figcaption>
                         </figcaption>
-                    </figure>
-                    <div>
+
                         <span> 3 unidades</span>
                         <span> sabonetes naturais de avei e mel, rosa e ameendoas e camomila com alecrim </span>
                         <span>R$ 59,99</span>
                         <button>comprar</button>
-                    </div>
+                    </figure>
                 </li>
                 <li>
-                    <figure>
+                    <figure class="produto figure">
                         <img src="./assets/images/Sabonetes Naturais com Elementos Botânicos (1).png"
                             alt="sabonete-botanico">
-                        <figcaption> sabonete essencial amendoas com ricino</figcaption>
-                    </figure>
-                    <div>
-                        <span> 1 unidade </span>
-                        <span> sabonete natural com amendoas e ricino e argila</span>
+                        <figcaption>sabonete essencial amendoas com ricino</figcaption>
+                        <span>1 unidade </span>
+                        <span>sabonete natural com amendoas e ricino e argila</span>
                         <span>R$ 49,99</span>
                         <button>comprar</button>
-                    </div>
+                    </figure>
                 </li>
             </ul>
 
@@ -131,78 +168,113 @@
             </div>
             <div class="footer-section">
                 <h3>contato</h3>
-                <ul>
-                    <li><a href="#redes sociais">redes sociais</a></li>
-                    <li><a href="#contato">contato</a></li>
-                </ul>
-            </div>
-        </nav>
-        <div>
-            <p>&copy; 2025 Casa da Deusa. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-    <!-- [1] -->
-    <div id="modal-1" class="modal" aria-hidden="true">
 
-        <!-- [2] -->
-        <div tabindex="-1" data-micromodal-close>
+                <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+</body>
 
-            <!-- [3] -->
-            <div role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+</html>
+<tr>
+    <td> <img src="./assets/images/creme-abacate.jpeg" alt="Creme de Abacate">Creme de Abacate</td>
+    <td>1</td>
+    <td> <input type="number" value="1" min="1"></td>
+    <td>R$ 49,99</td>
+    <td><button class="btn-deletar" aria-label="Remover produto">deletar</button></td>
+</tr>
+<tr>
+    <td> <img src="./assets/images/creme-calendula.jpeg" alt="Creme de Calêndula">Creme de Calêndula</td>
+    <td>1</td>
+    <td> <input type="number" value="1" min="1"></td>
+    <td>R$ 39,29</td>
+    <td><button class="btn-deletar" aria-label="Remover produto">deletar</button></td>
+</tr>
+</tbody>
+</table>
+<div>
+    <span id="Total">Total: R$ 0,00 </span>
+    <button id="finalizar-compra">Finalizar Compra</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+</body>
+
+</html>
+<ul>
+    <li><a href="#redes sociais">redes sociais</a></li>
+    <li><a href="#contato">contato</a></li>
+</ul>
+</div>
+</nav>
+<div>
+    <p>&copy; 2025 Casa da Deusa. Todos os direitos reservados.</p>
+</div>
+</footer>
+<!-- [1] -->
+<div id="modal-1" class="modal" aria-hidden="true">
+
+    <!-- [2] -->
+    <div tabindex="-1" data-micromodal-close>
+
+        <!-- [3] -->
+        <div role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
 
 
-                <header>
-                    <h2 id="modal-1-title">
-                        carrinho de compras
-                    </h2>
+            <header>
+                <h2 id="modal-1-title">
+                    carrinho de compras
+                </h2>
 
-                    <!-- [4] -->
-                    <button aria-label="Close modal" data-micromodal-close></button>
-                </header>
+                <!-- [4] -->
+                <button aria-label="Close modal" data-micromodal-close></button>
+                <button aria-label="Fechar modal" data-micromodal-close>&times;</button>
+            </header>
 
-                <div id="modal-1-content">
-                    <table> 
-                        <thead>
-                            <tr>
-                                <th>Produto</th>
-                                <th>Quantidade</th>
-                                <th>Preço</th>
-                                <th>Total</th>
-                                <th></th>
+            <div id="modal-1-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Quantidade</th>
+                            <th>Preço</th>
+                            <th>Total</th>
+                            <th></th>
 
-                                
-                            </tr>
-                        </thead>
-                        <tbody>
 
-                            <!-- Exemplo de linha de produto -->
-                            <tr>
-                                <td> <img src="./assets/images/creme-abacate.jpeg">Creme de Abacate</td>
-                                <td>1</td>
-                                <td> <input type="number" value="1" min="1"></td>
-                                <td>R$ 49,99</td>
-                                <td><button id="deletar">deletar</button></td>
-                                
-                            </tr>
-                            <tr>
-                                <td> <img src="./assets/images/creme-calendula.jpeg">Creme de Calêndula</td>
-                                <td>1</td>
-                                <td> <input type="number" value="1" min="1"></td>
-                                <td>R$ 39,29</td>
-                                <td><button id="deletar">deletar</button></td>
-                        </tbody>
-                    </table>
-                    <div>
-                        <span id="Total">Total:R$0,00 </span>
-                        <button id="finalizar-compra">Finalizar Compra</button>
-                    </div>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <!-- Exemplo de linha de produto -->
+                        <tr>
+                            <td> <img src="./assets/images/creme-abacate.jpeg">Creme de Abacate</td>
+                            <td>1</td>
+                            <td> <input type="number" value="1" min="1"></td>
+                            <td>R$ 49,99</td>
+                            <td><button id="deletar">deletar</button></td>
+
+                        </tr>
+                        <tr>
+                            <td> <img src="./assets/images/creme-calendula.jpeg">Creme de Calêndula</td>
+                            <td>1</td>
+                            <td> <input type="number" value="1" min="1"></td>
+                            <td>R$ 39,29</td>
+                            <td><button id="deletar">deletar</button></td>
+                    </tbody>
+                </table>
+                <div>
+                    <span id="Total">Total:R$0,00 </span>
+                    <button id="finalizar-compra">Finalizar Compra</button>
                 </div>
-
             </div>
-        </div>
-    </div>button>Remover</button></td>
 
-    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 </body>
 
 </html>
