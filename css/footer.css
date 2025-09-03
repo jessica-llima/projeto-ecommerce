@@ -1,0 +1,86 @@
+/* Estilos para o rodapé do site de ecommerce */
+
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 40px 0 20px 0;
+    text-align: center;
+    font-size: 16px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.footer-section {
+    flex: 1 1 200px;
+    min-width: 180px;
+}
+
+.footer-section h3 {
+    margin-bottom: 16px;
+    font-size: 18px;
+    color: #ffd700;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-section ul li a:hover {
+    color: #ffd700;
+}
+
+.footer-social {
+    margin-top: 20px;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin: 0 8px;
+    color: #fff;
+    font-size: 22px;
+    transition: color 0.2s;
+}
+
+.footer-social a:hover {
+    color: #ffd700;
+}
+
+.footer-copyright {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #bbb;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    .footer-section {
+        min-width: 0;
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,6 +1,7 @@
 main {
     grid-area: main;
     padding: 1rem;
+    box-sizing: border-box;
 }
 
 main section h2 {

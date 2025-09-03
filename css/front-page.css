@@ -1,6 +1,7 @@
 main {
     grid-area: main;
     padding: 1rem;
+    box-sizing: border-box;
 }
 
 .front-page {
@@ -15,9 +16,10 @@ main {
 }
 
 .logo {
-
+    display: block;
+    margin: 0 auto;
     object-fit: cover;
-    max-width: 60vw;
+    max-width: 100%;
     height: auto;
     animation: pulse 4s infinite, fadeIn 1.5s ease-in-out, slideout 1s 5s forwards;
 }
@@ -55,5 +57,16 @@ main {
     100% {
         transform: translateY(100%);
         opacity: 0;
+    }
+}
+@media (max-width: 768px) {
+   body {
+        font-size: 16px;
+    }
+    .container {
+        width: 90%;
+    }
+    img {
+        max-width: 100%;
     }
 }
