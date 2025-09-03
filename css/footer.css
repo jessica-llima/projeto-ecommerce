@@ -10,7 +10,7 @@ footer {
   margin-bottom: 2rem;
 }
 .footer-section h3 {
-  color: beige;
+  color: var(--cor-neutra-clara);
   font-size: 1.2rem;
   letter-spacing: 0.1rem;
   margin-bottom: 1rem;
