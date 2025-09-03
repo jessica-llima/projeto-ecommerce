@@ -1,3 +1,7 @@
+main {
+    grid-area: main;
+    padding: 1rem;
+}
 .cabecalho {
     grid-area: hearder;
     background-color: rgb(32, 50, 32);

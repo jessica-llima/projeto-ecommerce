@@ -1,3 +1,8 @@
+main {
+    grid-area: main;
+    padding: 1rem;
+}
+
 .front-page {
     height: 100vh;
     width: 100vw;
@@ -10,11 +15,11 @@
 }
 
 .logo {
-    
+
     object-fit: cover;
     max-width: 60vw;
     height: auto;
-   animation: pulse 4s infinite, fadeIn 1.5s ease-in-out, slideout 1s 5s forwards;
+    animation: pulse 4s infinite, fadeIn 1.5s ease-in-out, slideout 1s 5s forwards;
 }
 
 @keyframes pulse {
