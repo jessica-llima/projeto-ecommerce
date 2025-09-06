@@ -25,20 +25,10 @@
         <img src="/assets/images/logo.jpeg" alt="casa da deusa" class="logo" id="logo">
     </div>
     <script>
+        // Aguarda o tempo total das animações CSS (pulse + fadeIn + slideout)
         setTimeout(() => {
-            document.getElementById('logo').style.animation = "fadeOut 1s forwards";
-            setTimeout(() => {
-                document.querySelector('.front-page').style.display = 'none';
-            }, 5000);
-            const style = document.createElement('style');
-            style.innerHTML = `
-                @keyframes fadeOut {
-                    from { opacity: 1; transform: scale(1); }
-                    to { opacity: 0; transform: scale(0.9); }
-                }
-            `;
-            document.head.appendChild(style);
-        }, 1000);
+            document.querySelector('.front-page').style.display = 'none';
+        }, 6000); // 6s para garantir que todas animações terminem
     </script>
 
     <!-- Cabeçalho -->
@@ -188,37 +178,37 @@
     <!-- Modal Carrinho -->
     <div id="modal-1" class="modal" aria-hidden="true">
         <div tabindex="-1" data-micromodal-close>
-            <div role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+            <div class="container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
                 <header>
                     <h2 id="modal-1-title">Carrinho de Compras</h2>
-                    <button aria-label="Close modal" data-micromodal-close>&times;</button>
+                    <button class="fechar" aria-label="Close modal" data-micromodal-close>&times;</button>
                 </header>
                 <div id="modal-1-content">
                     <table>
                         <thead>
                             <tr>
-                                <th>Produto</th>
+                                <th class="th-produto">Produto</th>
                                 <th>Quantidade</th>
                                 <th>Preço</th>
-                                <th>Total</th>
+                                <th class="th-total">Total</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><img src="./assets/images/creme-abacate.jpeg" alt="Creme de Abacate">Creme de
+                                <td class="td-produto"><img src="./assets/images/creme-abacate.jpeg" alt="Creme de Abacate">Creme de
                                     Abacate</td>
                                 <td>1</td>
                                 <td><input type="number" value="1" min="1"></td>
-                                <td>R$ 49,99</td>
+                                <td class="td-total">R$ 49,99</td>
                                 <td><button class="btn-deletar" aria-label="Remover produto">Deletar</button></td>
                             </tr>
                             <tr>
-                                <td><img src="./assets/images/creme-calendula.jpeg" alt="Creme de Calêndula">Creme de
+                                <td class="td-produto"><img src="./assets/images/creme-calendula.jpeg" alt="Creme de Calêndula">Creme de
                                     Calêndula</td>
                                 <td>1</td>
                                 <td><input type="number" value="1" min="1"></td>
-                                <td>R$ 39,29</td>
+                                <td class="td-total">R$ 39,29</td>
                                 <td><button class="btn-deletar" aria-label="Remover produto">Deletar</button></td>
                             </tr>
                         </tbody>

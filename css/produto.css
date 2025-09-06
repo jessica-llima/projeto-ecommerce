@@ -20,6 +20,19 @@ main section ul {
     list-style: none;
     justify-items: center;
 }
+@media (max-width: 900px) {
+    main section ul {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    main section ul {
+        grid-template-columns: 1fr;
+        padding: 0.5rem;
+    }
+}
 main section ul li {
     display: flex;
     flex-direction: column;

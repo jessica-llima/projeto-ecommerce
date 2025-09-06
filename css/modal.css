@@ -7,6 +7,38 @@
     overflow: hidden;
     display: none;
 }
+/* =====================
+     Compatibilidade com nomes alternativos de células
+     ===================== */
+td.preco-unitario {
+    color: var(--cor-neutra-clara);
+    font-size: 0.9rem;
+    font-weight: 300;
+    white-space: nowrap;
+}
+
+td.quantidade input {
+    width: 48px;
+    padding: 4px;
+    background: transparent;
+    border: 1px solid var(--cor-primaria);
+    border-radius: 4px;
+    color: #e4e4e7;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+td .btn-deletar {
+    display: block;
+    background-image: url(../assets/images/icone_deletar.svg);
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: auto;
+    padding: 0.5rem;
+}
 
 
 .modal.is-open {
@@ -15,11 +47,17 @@
 
 
 .modal .container {
-    /* =====================*/
-    max-width: 720px;
-    height: auto;
-    padding: 1.5rem;
+    background-color: var(--cor-neutra-escura);
+    color: var(--cor-neutra-clara); 
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 1.2rem ;
     margin: 0 auto;
+}
+.modal header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
 
@@ -31,7 +69,7 @@
 table {
     border-collapse: collapse;
 }
-
+*
 
 tbody td {
     border: 2px solid var(--cor-neutra-escura);
@@ -41,7 +79,7 @@ tbody td {
 .th-produto,
 .th-total,
 .td-produto,
-.td-preco-total {
+.td-total {
     display: table-cell;
 }
 
@@ -57,10 +95,10 @@ tbody td {
 td img {
     width: 48px;
     height: auto;
-    border-radius: 4px;
+    border-radius: 4px; 
 }
 
-
+  
 .container-preco {
     display: flex;
     flex-direction: column;
@@ -80,7 +118,39 @@ td img {
     letter-spacing: 0.1rem;
 }
 
-
 .td-quantidade {
     text-align: center;
+}
+
+/* =====================
+     Estilização de células da tabela do modal
+     ===================== */
+td.preco-unitario {
+    color: var(--cor-neutra-clara);
+    font-size: 0.9rem;
+    font-weight: 300;
+    white-space: nowrap;
+}
+
+td.quantidade input {
+    width: 48px;
+    padding: 4px;
+    background: transparent;
+    border: 1px solid var(--cor-primaria);
+    border-radius: 4px;
+    color: #e4e4e7;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+td .btn-deletar {
+    display: block;
+    background-image: url(../assets/images/icone_deletar.svg);
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: auto;
+    padding: 0.5rem;
 }
