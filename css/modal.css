@@ -1,18 +1,61 @@
-/* =====================
-   Modal base
-   ===================== */
-.modal { 
+@media (max-width: 600px) {
+    .modal {
+        align-items: flex-end;
+    }
+    .modal .container {
+        width: 100%;
+        max-width: 100%;
+        min-height: 70vh;
+        border-radius: 16px 16px 0 0;
+        padding: 1.5rem 1rem;
+        animation: slideUp 0.35s ease-out;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (max-width: 600px) {
+    .modal .container {
+        max-width: 98vw;
+        width: 98vw;
+        min-width: 0;
+        padding: 1.2rem 0.5rem;
+        border-radius: 10px;
+    }
+    .modal header {
+        font-size: 1.05rem;
+        padding-bottom: 0.7rem;
+    }
+    table {
+        font-size: 0.92rem;
+    }
+    .finalizar-compra {
+        font-size: 1rem;
+        padding: 0.8rem;
+        max-width: 98vw;
+    }
+}
+.modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(20, 20, 20, 0.55); /* overlay elegante */
+    background: rgba(20, 20, 20, 0.55);
     display: none;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(8px); /* efeito vidro */
+    backdrop-filter: blur(8px);
     z-index: 999;
+    overflow-y: auto;
 }
 
 .modal.is-open {
@@ -26,7 +69,7 @@
     flex-direction: column;
     padding: 2.5rem 2rem;
     border-radius: 18px;
-    box-shadow: 0 8px 28px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
     max-width: 520px;
     width: 95vw;
     animation: fadeInUp 0.35s ease-out;
@@ -38,30 +81,25 @@
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* =====================
-   Cabeçalho
-   ===================== */
 .modal header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 1.8rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 1rem;
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--cor-primaria, #4ade80); /* verde suave */
+    color: var(--cor-primaria, #4ade80);
 }
 
-/* =====================
-   Tabela carrinho
-   ===================== */
 table {
     border-collapse: collapse;
     width: 100%;
@@ -74,22 +112,21 @@ tbody td {
     vertical-align: middle;
 }
 
-/* Imagem produto */
 td img {
     width: 60px;
     height: 60px;
     object-fit: cover;
     border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
     display: block;
     margin: 0 auto;
     transition: transform 0.2s ease;
 }
+
 td img:hover {
     transform: scale(1.05);
 }
 
-/* Preço unitário */
 td.preco-unitario {
     color: var(--cor-primaria, #4ade80);
     font-size: 1rem;
@@ -97,25 +134,24 @@ td.preco-unitario {
     white-space: nowrap;
 }
 
-/* Quantidade */
 td.quantidade input {
     width: 56px;
     padding: 6px;
     background: transparent;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     color: #fff;
     font-size: 0.95rem;
     text-align: center;
     transition: border 0.2s, background 0.2s;
 }
+
 td.quantidade input:focus {
     outline: none;
     border-color: var(--cor-primaria, #4ade80);
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
 }
 
-/* Botão deletar */
 td .btn-deletar {
     background-image: url(../assets/images/icone_deletar.svg);
     background-repeat: no-repeat;
@@ -128,12 +164,12 @@ td .btn-deletar {
     margin: auto;
     transition: transform 0.2s ease, opacity 0.2s ease;
 }
+
 td .btn-deletar:hover {
     transform: scale(1.2);
     opacity: 0.7;
 }
 
-/* Preço total do item */
 .td-preco-total {
     font-size: 1rem;
     font-weight: 500;
@@ -141,9 +177,6 @@ td .btn-deletar:hover {
     white-space: nowrap;
 }
 
-/* =====================
-   Resumo + botão compra
-   ===================== */
 .container-preco {
     display: flex;
     flex-direction: column;
@@ -159,23 +192,25 @@ td .btn-deletar:hover {
 }
 
 .finalizar-compra {
-    width: 100%;
+    display: block;
+    margin: 1.5rem auto 0 auto;
     max-width: 320px;
-    padding: 2rem;
-    font-size: 2rem;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    border-radius: 16px;
+    border-radius: 12px;
     background: var(--cor-primaria, #4ade80);
     color: #111;
-    border: 6 rem;
+    border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 1.5rem auto 6 auto;
-    display: flex;
+    box-shadow: 0 2px 8px rgba(32, 50, 32, 0.08);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
 }
+
 .finalizar-compra:hover {
     background: #22c55e;
     color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }

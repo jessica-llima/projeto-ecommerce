@@ -20,18 +20,14 @@
 </head>
 
 <body>
-    <!-- Tela de abertura -->
     <div class="front-page">
         <img src="/assets/images/logo.jpeg" alt="casa da deusa" class="logo" id="logo">
     </div>
     <script>
-        // Aguarda o tempo total das animações CSS (pulse + fadeIn + slideout)
         setTimeout(() => {
             document.querySelector('.front-page').style.display = 'none';
-        }, 6000); // 6s para garantir que todas animações terminem
+        }, 6000);
     </script>
-
-    <!-- Cabeçalho -->
     <header class="cabecalho">
         <div class="header-conteudo">
             <div class="header-esquerda">
@@ -217,15 +213,17 @@
                     </table>
                     <div>
                         <span id="Total">Total: R$ 0,00</span>
-                        <button id="finalizar-compra">Finalizar Compra</button>
+                        <button id="finalizar-compra" class="finalizar-compra">Finalizar Compra</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    </div>
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/carrinho.js"></script>
 </body>
 
 </html>

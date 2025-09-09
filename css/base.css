@@ -1,7 +1,4 @@
 
-/* =====================
-   Reset e base
-   ===================== */
 * {
   margin: 0;
   padding: 0;
@@ -25,9 +22,6 @@ body {
     "footer";
 }
 
-/* =====================
-   Imagens
-   ===================== */
 img {
   max-width: 100%;
   height: auto;
@@ -35,9 +29,7 @@ img {
   margin: 0 auto;
 }
 
-/* =====================
-   Container centralizador
-   ===================== */
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -45,18 +37,13 @@ img {
   padding: 10px;
 }
 
-/* =====================
-   Grid responsivo de produtos
-   ===================== */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
 }
 
-/* =====================
-   Classe global de texto
-   ===================== */
 .texto-padrao {
   font-size: 1rem;
   line-height: 1.6;
