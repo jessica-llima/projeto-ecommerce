@@ -1,156 +1,181 @@
-.modal {
+/* =====================
+   Modal base
+   ===================== */
+.modal { 
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    background: rgba(20, 20, 20, 0.55); /* overlay elegante */
     display: none;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px); /* efeito vidro */
+    z-index: 999;
 }
-/* =====================
-     Compatibilidade com nomes alternativos de células
-     ===================== */
-td.preco-unitario {
-    color: var(--cor-neutra-clara);
-    font-size: 0.9rem;
-    font-weight: 300;
-    white-space: nowrap;
-}
-
-td.quantidade input {
-    width: 48px;
-    padding: 4px;
-    background: transparent;
-    border: 1px solid var(--cor-primaria);
-    border-radius: 4px;
-    color: #e4e4e7;
-    font-size: 0.875rem;
-    text-align: center;
-}
-
-td .btn-deletar {
-    display: block;
-    background-image: url(../assets/images/icone_deletar.svg);
-    width: 24px;
-    height: 24px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    margin: auto;
-    padding: 0.5rem;
-}
-
 
 .modal.is-open {
-    display: block;
+    display: flex;
 }
-
 
 .modal .container {
-    background-color: var(--cor-neutra-escura);
-    color: var(--cor-neutra-clara); 
+    background: #1f1f24;
+    color: #f1f1f5;
     display: flex;
     flex-direction: column;
-    padding: 2.5rem 1.2rem ;
-    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.3);
+    max-width: 520px;
+    width: 95vw;
+    animation: fadeInUp 0.35s ease-out;
+    font-family: "Roboto", Arial, sans-serif;
 }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================
+   Cabeçalho
+   ===================== */
 .modal header {
     display: flex;
     align-items: center;
-    margin-bottom: 2rem;
+    justify-content: space-between;
+    margin-bottom: 1.8rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--cor-primaria, #4ade80); /* verde suave */
 }
 
-
-.modal .container th {
-    background-color: var(--cor-neutra-escura);
-}
-
-
+/* =====================
+   Tabela carrinho
+   ===================== */
 table {
     border-collapse: collapse;
+    width: 100%;
 }
-*
 
 tbody td {
-    border: 2px solid var(--cor-neutra-escura);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2rem 0.5rem;
+    font-size: 0.95rem;
+    vertical-align: middle;
 }
 
-
-.th-produto,
-.th-total,
-.td-produto,
-.td-total {
-    display: table-cell;
-}
-
-
-.td-preco-total {
-    white-space: nowrap;
-    font-size: 1rem;
-    font-weight: 300;
-    color: var(--cor-neutra-clara);
-}
-
-
+/* Imagem produto */
 td img {
-    width: 48px;
-    height: auto;
-    border-radius: 4px; 
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.2s ease;
+}
+td img:hover {
+    transform: scale(1.05);
 }
 
-  
+/* Preço unitário */
+td.preco-unitario {
+    color: var(--cor-primaria, #4ade80);
+    font-size: 1rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Quantidade */
+td.quantidade input {
+    width: 56px;
+    padding: 6px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 0.95rem;
+    text-align: center;
+    transition: border 0.2s, background 0.2s;
+}
+td.quantidade input:focus {
+    outline: none;
+    border-color: var(--cor-primaria, #4ade80);
+    background: rgba(255,255,255,0.05);
+}
+
+/* Botão deletar */
+td .btn-deletar {
+    background-image: url(../assets/images/icone_deletar.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 28px;
+    height: 28px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: auto;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+td .btn-deletar:hover {
+    transform: scale(1.2);
+    opacity: 0.7;
+}
+
+/* Preço total do item */
+.td-preco-total {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    white-space: nowrap;
+}
+
+/* =====================
+   Resumo + botão compra
+   ===================== */
 .container-preco {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
 }
-
 
 .total-carrinho {
-    text-align: right;
+    font-size: 6.1rem;
+    font-weight: 600;
+    color: var(--cor-primaria, #4ade80);
 }
-
 
 .finalizar-compra {
-    width: 369px;
-    font-size: 1.2rem;
-    font-weight: 300;
-    letter-spacing: 0.1rem;
-}
-
-.td-quantidade {
-    text-align: center;
-}
-
-/* =====================
-     Estilização de células da tabela do modal
-     ===================== */
-td.preco-unitario {
-    color: var(--cor-neutra-clara);
-    font-size: 0.9rem;
-    font-weight: 300;
-    white-space: nowrap;
-}
-
-td.quantidade input {
-    width: 48px;
-    padding: 4px;
-    background: transparent;
-    border: 1px solid var(--cor-primaria);
-    border-radius: 4px;
-    color: #e4e4e7;
-    font-size: 0.875rem;
-    text-align: center;
-}
-
-td .btn-deletar {
-    display: block;
-    background-image: url(../assets/images/icone_deletar.svg);
-    width: 24px;
-    height: 24px;
-    background-color: transparent;
-    border: none;
+    width: 100%;
+    max-width: 320px;
+    padding: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    border-radius: 16px;
+    background: var(--cor-primaria, #4ade80);
+    color: #111;
+    border: 6 rem;
     cursor: pointer;
-    margin: auto;
-    padding: 0.5rem;
+    transition: all 0.3s ease;
+    margin: 1.5rem auto 6 auto;
+    display: flex;
+}
+.finalizar-compra:hover {
+    background: #22c55e;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
